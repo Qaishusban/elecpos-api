@@ -1,19 +1,9 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  darkMode: ["class"],
+module.exports = {
   content: [
-    "./src/app/**/*.{ts,tsx}",
-    "./src/components/**/*.{ts,tsx}",
-    "./src/pages/**/*.{ts,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      boxShadow: { soft: "0 20px 40px rgba(2,6,23,0.06)" },
-      borderRadius: { "2xl": "1.5rem" },
-      container: { center: true, padding: "1rem" },
-    },
-  },
+  theme: { extend: {} },
   plugins: [],
 };
-export default config;
