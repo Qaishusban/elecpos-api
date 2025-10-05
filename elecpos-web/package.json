@@ -1,28 +1,28 @@
 {
    "engines": {
-    "node": "20.x"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "5.2.2",
-    "clsx": "2.1.1",
-    "jszip": "3.10.1",
-    "next": "15.0.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "swr": "2.3.6",
-    "tailwind-merge": "2.6.0",
-    "zod": "4.1.11"
-  },
+      "node": "20.x"
+   },
+   "dependencies": {
+      "@hookform/resolvers": "5.2.2",
+      "clsx": "2.1.1",
+      "jszip": "3.10.1",
+      "next": "15.0.3",
+      "react": "18.3.1",
+      "react-dom": "18.3.1",
+      "swr": "2.3.6",
+      "tailwind-merge": "2.6.0",
+      "zod": "4.1.11"
+   },
    "scripts": {
-    "dev": "next dev -p 3000",
-    "build": "next build",
-    "start": "next start -p 3000"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.14",
-    "@types/react": "19.1.17",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13"
-  }
+      "dev": "next dev -p 3000",
+      "build": "next build",
+      "start": "next start -p 3000"
+   },
+   "devDependencies": {
+      "@tailwindcss/postcss": "^4.1.14",
+      "@types/react": "19.1.17",
+      "autoprefixer": "^10.4.21",
+      "postcss": "^8.5.6",
+      "tailwindcss": "^3.4.18"
+   }
 }
