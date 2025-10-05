@@ -1,21 +1,26 @@
-import 'server-only';
+// src/lib/supabase-server.ts
 import { cookies } from 'next/headers';
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import type { Database } from '../lib/database.types'; // عدّل المسار حسب مشروعك
-import { createClient } from "@supabase/supabase-js";
-export function supabaseAdmin() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  const key = process.env.SUPABASE_SERVICE_ROLE!; // service role for secured selects/export
-  return createClient(url, key, {
-    auth: { autoRefreshToken: false, persistSession: false },
-  });
-}
+import { createServerClient } from '@supabase/ssr';
+
 export function supabaseServer() {
-  // نمرّر مرجع cookies كما هو
-  return createServerComponentClient<Database>({ cookies });
+  const cookieStore = cookies();
+
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value;
+        },
+        set(name: string, value: string, options: any) {
+          // Next's cookies are readonly on server during the request;
+          // leave set/remove no-ops to satisfy API shape.
+        },
+        remove(name: string, options: any) {
+          // same note as above
+        },
+      },
+    }
+  );
 }
-
-// alias إن أردت
-export const getServerSupabase = supabaseServer;
-export const supabaseBrowser  = supabaseServer;
-
