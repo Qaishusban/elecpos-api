@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabaseBrowser } from '@/lib/supabase-browser';
 
+
+
 /* نوع البيانات للسلاسل */
 type Point = { date: string; total: number };
 

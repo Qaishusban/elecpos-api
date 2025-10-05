@@ -4,7 +4,7 @@ import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import React, { useEffect, useMemo, useState } from "react";
-import { supabaseBrowser } from "@/lib/supabase";
+import { supabaseBrowser } from "@/lib/supabase-browser";
 
 type Row = {
   trx_date: string;  // "YYYY-MM-DD"
